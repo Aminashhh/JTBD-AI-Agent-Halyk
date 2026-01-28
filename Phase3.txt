@@ -1,0 +1,45 @@
+Project Name: "Contract Guardian" AI Agent
+Sponsor: Cloud Transformation Dept.
+Date: January 28, 2026
+PART 1: PRODUCT REQUIREMENTS DOCUMENT (PRD)
+1. Problem Statement Procurement specialists (e.g., "Arman") spend ~60% of their time manually comparing vendor contracts against Halyk Bank’s Compliance Policy and the KZ Law on Procurement. This manual process is slow (creating bottlenecks for business units) and prone to human error due to fatigue and fear of penalties.
+2. The Job To Be Done (JTBD) "When I receive a new vendor contract, I want to instantly highlight clauses that violate Bank Policy, so that I can send it to the Legal Department with confidence and without fear of missing critical risks.".
+3. Proposed Solution: "Contract Guardian" Agent
+An internal AI agent powered by a secure LLM (e.g., Claude 3.5 Sonnet or GPT-4o via Azure Private) with RAG (Retrieval-Augmented Generation) access to the bank's internal policy documents.
+4. Key Features (Functional Requirements)
+•	Automatic Redlining: The agent ingests PDF/Word contracts and highlights clauses that contradict the "Risk Policy 2024" in red.
+•	Compliance Score: Assigns a 0-100% safety score to the draft.
+•	Citation Engine: Every flag must cite the specific article of the "Law on Procurement" or Internal Regulation No. 154.
+•	PII Redaction: Automatically masks vendor names and BINs before processing to ensure privacy.
+PART 2: FINANCIAL REASONING (ROI)
+Assumption: The average Senior Procurement Specialist salary at Halyk Bank is ~600,000 KZT/month (approx. 3,500 KZT/hour). The department has 20 specialists.
+1. Cost of the Problem (Current State)
+•	Time spent on manual review: 6 hours/day per person.
+•	"Monkey work" cost: 6 hours $\times$ 3,500 KZT = 21,000 KZT wasted per person/day.
+•	Annual Waste: 21,000 KZT $\times$ 20 people $\times$ 250 days = 105,000,000 KZT / year.
+2. Projected Savings (Future State)
+•	The AI Agent reduces review time from 6 hours to 1 hour (verification only).
+•	Time saved: 5 hours/day per person.
+•	Value recovered: 5 hours $\times$ 3,500 KZT $\times$ 20 people $\times$ 250 days = 87,500,000 KZT / year.
+3. Cost of Implementation (OpEx)
+•	Token costs (High load): ~$500/month (~250,000 KZT).
+•	Infrastructure (Azure/Local hosting): ~$1,000/month (~500,000 KZT).
+•	Total Annual Cost: ~9,000,000 KZT.
+4. ROI Calculation
+$$ROI = \frac{\text{Net Return}}{\text{Cost of Investment}} \times 100$$
+$$ROI = \frac{87.5M - 9M}{9M} \approx \textbf{872\%}$$
+Conclusion: The project pays for itself in less than 2 months..
+PART 3: GOVERNANCE & ETHICS CHECK (Kazakhstan Context)
+1. Data Residency Risk (Law on Personal Data)
+•	Risk: Sending unredacted contracts containing names/BINs/IINs to OpenAI servers (USA) violates the Law of the Republic of Kazakhstan "On Personal Data and their Protection".
+•	Mitigation: Use Microsoft Azure Stack located in Kazakhstan (if available) or deploy open-weights models (e.g., Llama 3) on Halyk Bank's on-premise servers (Air-gapped)..
+2. "Human-in-the-Loop" (Ethical Decision Making)
+•	Risk: The AI might "hallucinate" and approve a risky contract, leading to financial loss.
+•	Mitigation: The Agent is never allowed to sign or approve. It acts only as a "Copilot." The final signature must be physical/digital by a human (Arman).
+3. Bias & Language
+•	Risk: Models trained primarily on English data may misunderstand legal nuances in Russian/Kazakh contracts.
+•	Mitigation: Fine-tuning the model specifically on the corpus of Kazakhstan Legal Codes (Adilet.zan.kz) to ensure high accuracy in local languages.
+EXECUTIVE DECISION: GO / NO-GO
+Recommendation: GO 
+The financial upside (872% ROI) and the reduction of operational risk justify the development. However, development must strictly follow the "On-Premise First" strategy to comply with KZ Data Sovereignty laws. We will start with a Pilot for the IT Procurement team (Arman's unit) before scaling.
+
