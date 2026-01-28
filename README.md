@@ -32,7 +32,7 @@ The selected use case focuses on procurement and contract compliance processes.
   Product Requirements Document (PRD) for the proposed AI agent.
 
 - Presentation.pdf  
-  Final presentation summarizing the project.
+  Public company documents used as context.
 
 - Sustainability-report-2024.pdf / hsbkp_2023_eng.pdf  
   Public company documents used as context.
